@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ## Скачивание фотографий
 
-Запуск SpaceX (можно указать LAUNCH_ID, иначе скачаются фото последнего запуска):
+Запуск SpaceX (можно указать ID запуска, иначе скачаются фото последнего запуска):
 ```
 python fetch_spacex_images.py --id LAUNCH_ID
 ```
