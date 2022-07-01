@@ -12,10 +12,13 @@ def fetch_spacex_images(launch_id='latest'):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Загружает изображения запуска SpaceX')
+    parser = argparse.ArgumentParser(
+        description='Загружает изображения запуска SpaceX'
+    )
     parser.add_argument('--id', help='ID запуска', default='latest')
     args = parser.parse_args()
     fetch_spacex_images(args.id)
+
 
 if __name__ == '__main__':
     main()

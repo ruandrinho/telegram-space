@@ -8,7 +8,9 @@ import argparse
 
 def main():
     load_dotenv()
-    parser = argparse.ArgumentParser(description='Загружает изображения запуска SpaceX')
+    parser = argparse.ArgumentParser(
+        description='Загружает изображения запуска SpaceX'
+    )
     parser.add_argument('-f', '--file', help='Имя файла')
     args = parser.parse_args()
 

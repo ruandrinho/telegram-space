@@ -24,10 +24,14 @@ def fetch_nasa_apod_images(api_key, days=1):
 
 def main():
     load_dotenv()
-    parser = argparse.ArgumentParser(description='Загружает изображения NASA APOD')
-    parser.add_argument('-d', '--days', type=int, help='Количество дней', default=1)
+    parser = argparse.ArgumentParser(
+        description='Загружает изображения NASA APOD'
+    )
+    parser.add_argument('-d', '--days', type=int, help='Количество дней',
+                        default=1)
     args = parser.parse_args()
     fetch_nasa_apod_images(os.getenv('NASA_API_KEY'), args.days)
+
 
 if __name__ == '__main__':
     main()
