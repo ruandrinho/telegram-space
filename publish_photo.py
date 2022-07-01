@@ -16,7 +16,7 @@ def main():
         args.file = choice(os.listdir('images'))
     if not exists(f'images/{args.file}'):
         print('Неверное имя файла')
-        exit()
+        return
 
     bot = telegram.Bot(token=os.getenv('TELEGRAM_BOT_TOKEN'))
     with open(f'images/{args.file}', 'rb') as image:
