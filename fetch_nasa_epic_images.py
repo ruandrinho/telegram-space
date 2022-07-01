@@ -11,11 +11,12 @@ def fetch_nasa_epic_images(api_key, count=1):
     response = requests.get(url, params={'api_key': api_key})
     for n, item in enumerate(response.json()[:count]):
         img_datetime = datetime.datetime.fromisoformat(item['date'])
-        img_url = f'https://api.nasa.gov/EPIC/archive/natural/{img_datetime.year}/{img_datetime.month:02d}/{img_datetime.day:02d}/png/{item["image"]}.png'
+        img_url = f'https://api.nasa.gov/EPIC/archive/natural/{img_datetime.year}/\
+                    {img_datetime.month:02d}/{img_datetime.day:02d}/png/{item["image"]}.png'
         download_image(
             img_url, 
             f'nasa_epic_{n:02d}.png', 
-            {'api_key': os.getenv('NASA_API_KEY')}
+            {'api_key': api_key}
         )
 
 
