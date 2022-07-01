@@ -13,7 +13,8 @@ def main():
         for root, dirs, files in os.walk('images'):
             shuffle(files)
             for file in files:
-                bot.send_photo(chat_id='@cool_space_photos', photo=open(f'images/{file}', 'rb'))
+                with open(f'images/{file}', 'rb') as image:
+                    bot.send_photo(chat_id='@cool_space_photos', photo=image)
                 time.sleep(interval*60)
 
 

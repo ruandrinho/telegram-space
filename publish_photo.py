@@ -19,7 +19,8 @@ def main():
         exit()
 
     bot = telegram.Bot(token=os.getenv('TELEGRAM_BOT_TOKEN'))
-    bot.send_photo(chat_id='@cool_space_photos', photo=open(f'images/{args.file}', 'rb'))
+    with open(f'images/{args.file}', 'rb') as image:
+        bot.send_photo(chat_id='@cool_space_photos', photo=image)
 
 
 if __name__ == '__main__':
