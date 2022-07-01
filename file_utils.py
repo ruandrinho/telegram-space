@@ -12,7 +12,7 @@ def download_image(url, filename, params={}):
         file.write(response.content)
 
 
-def get_file_extension(url):
+def get_extension_from_url(url):
     path = urlsplit(url).path
     path = unquote(path)
     file = os.path.split(path)[1]

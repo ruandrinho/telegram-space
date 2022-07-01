@@ -2,7 +2,7 @@ import requests
 import datetime
 import argparse
 import os
-from file_utils import download_image, get_file_extension
+from file_utils import download_image
 from dotenv import load_dotenv
 
 

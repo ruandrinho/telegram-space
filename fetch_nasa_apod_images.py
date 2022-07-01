@@ -2,7 +2,7 @@ import requests
 import datetime
 import argparse
 import os
-from file_utils import download_image, get_file_extension
+from file_utils import download_image, get_extension_from_url
 from dotenv import load_dotenv
 
 
@@ -18,7 +18,7 @@ def fetch_nasa_apod_images(api_key, days=1):
     for n, item in enumerate(response.json()):
         if item['media_type'] != 'image':
             continue
-        extension = get_file_extension(item['hdurl'])
+        extension = get_extension_from_url(item['hdurl'])
         download_image(item['hdurl'], f'nasa_apod_{item["date"]}{extension}')
 
 
